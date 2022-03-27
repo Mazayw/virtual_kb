@@ -1,8 +1,8 @@
-$color-dark-i: #545454
 $color-primary: #F1CDB3
 $color-primary-light: #FDDCC4
 $color-dark-s: #CDCDCD
 $color-dark-m: #B2B2B2
+$color-dark-l: #545454
 $color-dark-xl: #4C4C4C
 $color-dark-2xl: #444444
 $color-dark-3xl: #292929
@@ -108,5 +108,101 @@ header
     line-height: 130%
     font-size: 1.7rem
     cursor: pointer
-
-
+.about_screen
+    display: flex
+    margin-bottom: 10rem
+    img
+        margin-top: 8rem
+        margin-left: 17.5rem
+    .container
+        display: flex
+.about_text
+    flex-direction: column
+    margin-left: 12rem
+    p
+        margin-top: 2.5rem
+        width: 43rem
+        font-family: Arial, Helvetica, sans-serif
+        font-weight: 400
+        font-size: 1.5rem
+        line-height: 160%
+        color: $color-dark-xl
+.about_title
+    margin-top: 9.4rem
+    font-family: Georgia, 'Times New Roman', Times, serif
+    font-weight: 400
+    font-size: 3.5rem
+    line-height: 130%
+    letter-spacing: 0.06em
+    width: 37rem
+    color: $color-dark-l
+.pets_screen
+    background-color: $color-light-l
+    text-align: center
+.pets_title
+    padding-top: 8rem
+    font-family: Georgia, 'Times New Roman', Times, serif
+    font-weight: 400
+    font-size: 3.5rem
+    line-height: 130%
+    letter-spacing: 0.06em
+    color: $color-dark-l
+.pets_slider
+    margin-top: 6rem
+    display: flex
+    justify-content: space-between
+    align-items: center
+.pets_slider_inner
+    display: flex
+    justify-content: space-between
+    width: 99rem
+    button
+        border: 2px solid $color-primary
+        border-radius: 10rem
+        width: 18.7rem
+        height: 5.2rem
+        margin-top: 3rem
+        font-family: Georgia, 'Times New Roman', Times, serif
+        font-weight: 400
+        font-size: 1.7rem
+        line-height: 130%
+        letter-spacing: 0.06em
+        color: $color-dark-3xl
+        cursor: pointer
+.pets_button
+    width: 26.1rem
+    height: 5.2rem
+    background: $color-primary
+    border-radius: 10rem
+    margin-top: 5.9rem
+    margin-bottom: 10rem
+    border: none
+    color: $color-dark-3xl
+    letter-spacing: 0.06em
+    font-family: Georgia, 'Times New Roman', Times, serif
+    font-weight: 400
+    line-height: 130%
+    font-size: 1.7rem
+    cursor: pointer
+.left_arrow, .right_arrow
+    width: 5.2rem
+    height: 5.2rem
+    border: 2px solid $color-primary
+    box-sizing: border-box
+    border-radius: 10rem
+    cursor: pointer
+.right_arrow
+    transform: scaleX(-1)
+.pet_name
+    font-family: Georgia, 'Times New Roman', Times, serif
+    font-weight: 400
+    font-size: 2rem
+    line-height: 2.3rem
+    letter-spacing: 0.06em
+    color: $color-dark-l
+    margin-top: 2.6rem
+.slider_card
+    width: 27rem
+    height: 43.5rem
+    background-color: #fff
+    border-radius: 0.9rem
