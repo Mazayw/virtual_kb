@@ -7,6 +7,7 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 
 .container {
@@ -85,10 +86,6 @@ header {
   border-bottom: 3px solid;
   border-color: #F1CDB3;
   line-height: 2.24rem;
-}
-
-.header_menu_element {
-  list-style-type: none;
 }
 
 .start_screen {
@@ -295,5 +292,43 @@ header {
   height: 43.5rem;
   background-color: #fff;
   border-radius: 0.9rem;
+}
+
+.help_header {
+  margin-top: 8rem;
+  font-family: 'Georgia';
+  font-weight: 400;
+  font-size: 3.5rem;
+  line-height: 130%;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.help_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 10rem;
+}
+
+.help_card {
+  text-align: center;
+  margin: 5.9rem 6rem 0;
+}
+
+.help_card_title {
+  font-family: 'Georgia';
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #545454;
+  margin-top: 2.5rem;
 }
 /*# sourceMappingURL=style.css.map */
