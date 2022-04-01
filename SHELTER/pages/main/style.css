@@ -2,6 +2,18 @@
   font-size: 10px;
 }
 
+@font-face {
+  font-family: 'Arial';
+  src: url("../../assets/fonts/Arial.woff");
+  src-font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Georgia';
+  src: url("../../assets/fonts/Georgia.woff");
+  src-font-weight: 400;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -18,13 +30,29 @@ a {
   text-decoration: none;
 }
 
-img {
-  max-width: 100%;
-}
-
 body {
   font-weight: 400;
   max-width: 100vw;
+}
+
+.button {
+  border: 2px solid #F1CDB3;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 100px;
+  color: #292929;
+  letter-spacing: 0.06em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 400;
+  line-height: 130%;
+  font-size: 1.7rem;
+  cursor: pointer;
+  padding: 15px 43px;
+}
+
+.button:hover {
+  background-color: #FDDCC4;
+  border-color: #FDDCC4;
 }
 
 .container {
@@ -35,6 +63,7 @@ body {
 
 .first_screen {
   height: 90.8rem;
+  width: 100vw;
   padding-top: 6.1rem;
   background: url("../../assets/images/noise_transparent@2x.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
@@ -83,20 +112,32 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 44.3rem;
   margin-top: 1.6rem;
   font-family: Arial;
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 160%;
-  color: #CDCDCD;
 }
 
 .header_menu_element {
+  margin-left: 3.6rem;
+}
+
+.header_menu_element a {
+  color: #CDCDCD;
+}
+
+.header_menu_element:hover a {
+  color: #FAFAFA;
   cursor: pointer;
+}
+
+.header_menu_element a:visited {
+  color: #CDCDCD;
+}
+
+.header_menu_element a:active {
+  color: #CDCDCD;
 }
 
 .active_link {
@@ -110,6 +151,8 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -123,13 +166,13 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 46rem;
+  max-width: 46rem;
   height: 32.2rem;
   margin-top: 16.4rem;
 }
 
 .start_heading {
-  width: 31rem;
+  max-width: 31rem;
   height: 11.4rem;
   font-size: 4.4rem;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -145,23 +188,12 @@ header {
   line-height: 160%;
   color: #CDCDCD;
   margin-top: 4.0rem;
-  width: 45.92rem;
+  max-width: 45.92rem;
+  padding-bottom: 5.8rem;
 }
 
 .primary_button {
-  width: 20.7rem;
-  height: 5.2rem;
   background: #F1CDB3;
-  border-radius: 10rem;
-  margin-top: 4.2rem;
-  border: none;
-  color: #292929;
-  letter-spacing: 0.06em;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: 400;
-  line-height: 130%;
-  font-size: 1.7rem;
-  cursor: pointer;
 }
 
 .about_screen {
@@ -191,7 +223,7 @@ header {
 
 .about_text p {
   margin-top: 2.5rem;
-  width: 43rem;
+  max-width: 43rem;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 1.5rem;
@@ -213,6 +245,7 @@ header {
 .pets_screen {
   background-color: #F6F6F6;
   text-align: center;
+  padding-bottom: 11.5rem;
 }
 
 .pets_title {
@@ -246,21 +279,7 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 99rem;
-}
-
-.pets_slider_inner button {
-  border: 2px solid #F1CDB3;
-  border-radius: 10rem;
-  width: 18.7rem;
-  height: 5.2rem;
-  margin-top: 3.1rem;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: 400;
-  font-size: 1.7rem;
-  line-height: 130%;
-  letter-spacing: 0.06em;
-  color: #292929;
-  cursor: pointer;
+  margin-bottom: 7.5rem;
 }
 
 .pets_button {
@@ -288,11 +307,17 @@ header {
           box-sizing: border-box;
   border-radius: 10rem;
   cursor: pointer;
+  background-color: transparent;
 }
 
 .right_arrow {
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
+}
+
+.left_arrow:hover, .right_arrow:hover {
+  background-color: #FDDCC4;
+  border-color: #FDDCC4;
 }
 
 .pet_name {
@@ -303,13 +328,20 @@ header {
   letter-spacing: 0.06em;
   color: #545454;
   margin-top: 2.6rem;
+  margin-bottom: 4.6rem;
 }
 
 .slider_card {
   width: 27rem;
   height: 43.5rem;
-  background-color: #fff;
+  background-color: #FAFAFA;
   border-radius: 0.9rem;
+}
+
+.slider_card:hover {
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
 .help_header {
@@ -354,11 +386,11 @@ header {
 
 .donation_screen {
   background-color: #F6F6F6;
-  padding-bottom: 10rem;
+  padding-bottom: 10.1rem;
 }
 
 .donation_content {
-  padding-top: 8.2rem;
+  padding-top: 8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -369,7 +401,7 @@ header {
 
 .donation_dog {
   margin-top: 0.9rem;
-  width: 50.5rem;
+  max-width: 50.5rem;
   height: 26.1rem;
 }
 
@@ -419,7 +451,7 @@ header {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 1.8rem;
-  width: 34.9rem;
+  max-width: 34.9rem;
   height: 4.3rem;
   background: #F1CDB3;
   border-radius: 9px;

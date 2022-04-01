@@ -14,6 +14,15 @@ $color-light-xl: #ffffff
 \:root
     font-size: 10px
 
+@font-face
+	font-family: 'Arial'
+	src: url('../../assets/fonts/Arial.woff')
+    font-weight: 400
+@font-face
+	font-family: 'Georgia'
+	src: url('../../assets/fonts/Georgia.woff')
+    font-weight: 400
+
 *
     box-sizing: border-box
     margin: 0
@@ -23,19 +32,37 @@ li
     list-style-type: none
 a
     text-decoration: none
-img
+//a:visited
+//    color: $color-dark-s
+//a:active
+//    color: $color-dark-s
+//img
     max-width: 100%
 body
     font-weight: 400
-
     max-width: 100vw
-
+.button
+    border: 2px solid $color-primary
+    box-sizing: border-box
+    border-radius: 100px
+    color: $color-dark-3xl
+    letter-spacing: 0.06em
+    font-family: Georgia, 'Times New Roman', Times, serif
+    font-weight: 400
+    line-height: 130%
+    font-size: 1.7rem
+    cursor: pointer
+    padding: 15px 43px
+.button:hover
+    background-color: $color-primary-light
+    border-color: $color-primary-light
 .container
     max-width: 123rem
     margin: 0 auto
     padding: 0 1.5rem
 .first_screen
     height: 90.8rem
+    width: 100vw
     padding-top: 6.1rem
     background: url("../../assets/images/noise_transparent@2x.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20
 header
@@ -64,16 +91,25 @@ header
     margin-top: 1rem
 .header_menu_list
     display: flex
-    justify-content: space-between
-    width: 44.3rem
+    //justify-content: space-between
+    //width: 44.3rem
     margin-top: 1.6rem
     font-family: Arial
     font-weight: 400
     font-size: 1.5rem
     line-height: 160%
-    color: $color-dark-s
 .header_menu_element
-    cursor: pointer
+    margin-left: 3.6rem
+    a
+        color: $color-dark-s
+.header_menu_element:hover
+    a
+        color: $color-light-s
+        cursor: pointer
+.header_menu_element a:visited
+    color: $color-dark-s
+.header_menu_element a:active
+    color: $color-dark-s
 .active_link
     color: $color-light-s
     border-bottom: 3px solid
@@ -81,17 +117,18 @@ header
     line-height: 2.3rem
 .start_screen
     display: flex
+    flex-wrap: wrap
     justify-content: space-between
     align-content: center
     img
     margin-top: 5.9rem
 .start_screen_text
     flex-direction: column
-    width: 46rem
+    max-width: 46rem
     height: 32.2rem
     margin-top: 16.4rem
 .start_heading
-    width: 31rem
+    max-width: 31rem
     height: 11.4rem
     font-size: 4.4rem
     font-family: Georgia, 'Times New Roman', Times, serif
@@ -105,21 +142,10 @@ header
     line-height: 160%
     color: $color-dark-s
     margin-top: 4.0rem
-    width: 45.92rem
+    max-width: 45.92rem
+    padding-bottom: 5.8rem
 .primary_button
-    width: 20.7rem
-    height: 5.2rem
     background: $color-primary
-    border-radius: 10rem
-    margin-top: 4.2rem
-    border: none
-    color: $color-dark-3xl
-    letter-spacing: 0.06em
-    font-family: Georgia, 'Times New Roman', Times, serif
-    font-weight: 400
-    line-height: 130%
-    font-size: 1.7rem
-    cursor: pointer
 .about_screen
     display: flex
     margin-bottom: 10rem
@@ -132,7 +158,7 @@ header
     margin-left: 12rem
     p
         margin-top: 2.5rem
-        width: 43rem
+        max-width: 43rem
         font-family: Arial, Helvetica, sans-serif
         font-weight: 400
         font-size: 1.5rem
@@ -150,6 +176,7 @@ header
 .pets_screen
     background-color: $color-light-l
     text-align: center
+    padding-bottom: 11.5rem
 .pets_title
     padding-top: 8rem
     font-family: Georgia, 'Times New Roman', Times, serif
@@ -167,19 +194,7 @@ header
     display: flex
     justify-content: space-between
     width: 99rem
-    button
-        border: 2px solid $color-primary
-        border-radius: 10rem
-        width: 18.7rem
-        height: 5.2rem
-        margin-top: 3.1rem
-        font-family: Georgia, 'Times New Roman', Times, serif
-        font-weight: 400
-        font-size: 1.7rem
-        line-height: 130%
-        letter-spacing: 0.06em
-        color: $color-dark-3xl
-        cursor: pointer
+    margin-bottom: 7.5rem
 .pets_button
     width: 26.1rem
     height: 5.2rem
@@ -202,8 +217,12 @@ header
     box-sizing: border-box
     border-radius: 10rem
     cursor: pointer
+    background-color: transparent
 .right_arrow
     transform: scaleX(-1)
+.left_arrow:hover, .right_arrow:hover
+    background-color: $color-primary-light
+    border-color: $color-primary-light
 .pet_name
     font-family: Georgia, 'Times New Roman', Times, serif
     font-weight: 400
@@ -212,11 +231,16 @@ header
     letter-spacing: 0.06em
     color: $color-dark-l
     margin-top: 2.6rem
+    margin-bottom: 4.6rem
 .slider_card
     width: 27rem
     height: 43.5rem
-    background-color: #fff
+    background-color: $color-light-s
     border-radius: 0.9rem
+.slider_card:hover
+    background-color: #fff
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.2)
+
 .help_header
     margin-top: 8rem
     font-family: 'Georgia'
@@ -245,14 +269,14 @@ header
     margin-top: 2.6rem
 .donation_screen
     background-color: $color-light-l
-    padding-bottom: 10rem
+    padding-bottom: 10.1rem
 .donation_content
-    padding-top: 8.2rem
+    padding-top: 8rem
     display: flex
     justify-content: center
 .donation_dog
     margin-top: 0.9rem
-    width: 50.5rem
+    max-width: 50.5rem
     height: 26.1rem
 .donation_text
     padding-left: 3rem
@@ -286,7 +310,7 @@ header
     justify-content: space-evenly
     align-items: center
     margin-top: 1.8rem
-    width: 34.9rem
+    max-width: 34.9rem
     height: 4.3rem
     background: $color-primary
     border-radius: 9px
@@ -343,3 +367,4 @@ footer
     flex-direction: column
     height: 11rem
     margin-top: 3.5rem
+
