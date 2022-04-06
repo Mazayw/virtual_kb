@@ -118,10 +118,12 @@ button:hover
     border-color: $color-primary-light
 
 .header
-    position: absolute
+    position: sticky
     top: 0
     width: 100%
-    padding-top: 6rem
+    padding-top: 3rem
+    padding-bottom: 3rem
+    background: $color-light-xl
 
 .header_logo
     text-align: center
@@ -133,7 +135,7 @@ button:hover
     font-size: 3.2rem
     line-height: 3.5rem
     letter-spacing: 0.06em
-    color: $color-primary
+    color: $color-dark-l
 
 .logo_subtitle
     font-family: 'Arial', sans-serif
@@ -142,18 +144,13 @@ button:hover
     font-size: 1.3rem
     line-height: 1.5rem
     letter-spacing: 0.1em
-    color: $color-light-xl
+    color: $color-dark-3xl
     margin-top: 1rem
 
 .header_menu_list
     display: flex
     justify-content: space-between
     width: 44.3rem
-
-.first_screen
-    padding-top: 18rem
-    vertical-align: middle
-    background: url("../../assets/images/noise_transparent@2x.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20
 
 .header_menu
     align-items: center
@@ -166,54 +163,16 @@ button:hover
     font-weight: 400
     font-size: 1.5rem
     line-height: 0.3rem
-    color: $color-dark-s
+    color: $color-dark-l
 
 .header_menu_element:hover
-    color: $color-light-s
-
-.start_screen_text
-    margin-top: 16.4rem
-    button
-        margin-top: 4.0rem
+    color: $color-dark-3xl
 
 .active_link
-    color: $color-light-s
+    color: $color-dark-3xl
     border-bottom: 3px solid
     border-color: $color-primary
     padding-bottom: 0.3rem
-
-.start_heading
-    width: 31rem
-
-.start_subheading
-    margin-top: 4.2rem
-    width: 46rem
-    font-family: 'Arial'
-    font-style: normal
-    font-weight: 400
-    font-size: 1.5rem
-    line-height: 2.4rem
-    color: $color-dark-s
-
-.about_screen
-    padding-top: 8rem
-    padding-bottom: 10rem
-    .container
-        justify-content: center
-    img
-        margin-right: 12rem
-
-.about_text
-    max-width: 43rem
-    align-self: center
-
-.about_title
-    color: $color-dark-l
-    width: 37rem
-
-.about_subtitle
-    p
-        margin-top: 2.5rem
 
 .pets_screen
     background: $color-light-l
@@ -240,8 +199,10 @@ button:hover
 
 .pets_slider_inner
     display: flex
+    flex-wrap: wrap
     justify-content: center
-    column-gap: 9rem
+    column-gap: 4rem
+    row-gap: 3rem
 
 .slider_card
     width: 27rem
@@ -262,7 +223,13 @@ button:hover
     background-color: #fff
     box-shadow: 0px 0px 5px rgba(0,0,0,0.2)
 
-.left_arrow, .right_arrow
+.pagination
+    margin-top: 6rem
+    display: flex
+    width: 34rem
+    justify-content: space-between
+
+.pagination_button
     width: 5.2rem
     height: 5.2rem
     border: 2px solid $color-primary
@@ -271,90 +238,24 @@ button:hover
     cursor: pointer
     background-color: transparent
 
-.right_arrow
-    transform: scaleX(-1)
+.button_current
+    background-color: $color-primary
+    border-color: $color-primary
 
-.left_arrow:hover, .right_arrow:hover
-    background-color: $color-primary-light
-    border-color: $color-primary-light
+.button_inactive
+    border: 2px solid $color-dark-s
+    box-sizing: border-box
+    border-radius: 10rem
+    h4
+        color: $color-dark-s
 
-.pets_button
-    margin-top: 6rem
-
-.pets_help
-    padding-top: 8rem
-    .container
-        flex-direction: column
-        align-items: center
-
-.help_header
-    text-align: center
-
-.help_list
-    display: flex
-    justify-content: center
-    flex-wrap: wrap
-    margin-bottom: 10rem
-    column-gap: 12rem
-
-.help_card
-    text-align: center
-    margin-top: 6rem
-
-.help_card_title
-    margin-top: 2.6rem
-
-.donation_screen
-    background: $color-light-l
-    padding-top: 8rem
-    padding-bottom: 10.1rem
-    .container
-        justify-content: center
-        column-gap: 3rem
-        align-items: center
-    img
-        max-width: 50.5rem
-        max-height: 26.1rem
-
-.donation_text
-    width: 38rem
-
-.donation_title
-    width: 30rem
-
-.donation_subtitle
-    margin-top: 2rem
-
-.donation_creditcard
-    display: flex
-    justify-content: space-evenly
-    align-items: center
-    margin-top: 2rem
-    max-width: 34.9rem
-    height: 4.3rem
-    background: $color-primary
-    border-radius: 9px
-    img
-        height: 2.3rem
-
-.creditcard_number
-    font-family: 'Georgia'
-    font-weight: 400
-    font-size: 2.0rem
-    text-align: center
-    line-height: 115%
-    letter-spacing: 0.06em
-    color: $color-dark-l
-
-.donation_legal
-    max-width: 38rem
-    font-family: 'Arial'
-    font-style: italic
-    font-weight: 400
-    font-size: 1.2rem
-    line-height: 1.8rem
-    margin-top: 2rem
-    color: $color-dark-m
+.button_inactive:hover
+    border: 2px solid $color-dark-s
+    box-sizing: border-box
+    border-radius: 10rem
+    background-color: transparent
+    h4
+        color: $color-dark-s
 
 footer
     background: url("../../assets/images/noise_transparent@2x.png"),
