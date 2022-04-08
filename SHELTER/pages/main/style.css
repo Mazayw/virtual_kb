@@ -350,6 +350,11 @@ button:hover {
           box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
+.slider_card:hover .button {
+  background-color: #FDDCC4;
+  border-color: #FDDCC4;
+}
+
 .left_arrow, .right_arrow {
   width: 5.2rem;
   height: 5.2rem;
