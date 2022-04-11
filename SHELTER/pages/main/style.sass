@@ -30,6 +30,8 @@ $color-light-xl: #ffffff
     margin: 0
     padding: 0
 
+@import "../../assets/Sass/_burger"
+
 .container
     display: flex
     justify-content: space-between
@@ -201,16 +203,15 @@ button:hover
     padding-bottom: 10rem
     .container
         justify-content: center
+        align-items: center
     img
         margin-right: 12rem
 
 .about_text
     max-width: 43rem
-    align-self: center
 
 .about_title
     color: $color-dark-l
-    width: 37rem
 
 .about_subtitle
     p
@@ -232,6 +233,9 @@ button:hover
 .pets_title
     text-align: center
 
+.slide_arrow
+    flex-shrink: 0
+
 .pets_slider
     display: flex
     margin-top: 6rem
@@ -243,6 +247,7 @@ button:hover
     display: flex
     justify-content: center
     column-gap: 9rem
+    width: 100%
 
 .slider_card
     width: 27rem
@@ -321,10 +326,7 @@ button:hover
         max-height: 26.1rem
 
 .donation_text
-    width: 38rem
-
-.donation_title
-    width: 30rem
+    max-width: 38rem
 
 .donation_subtitle
     margin-top: 2rem
@@ -388,12 +390,11 @@ footer
 .footer_puppy
     margin-left: 4rem
 
-@media screen and ( max-width: 1280px )
+@media ( max-width: 1280px )
     .header
         padding-top: 3rem
 
     .container
-        max-width: 76.8rem
         padding: 0 3rem
 
     .first_screen
@@ -420,7 +421,8 @@ footer
             order: 2
             width: 30rem
             height: 40.8rem
-            margin: 8rem auto 0 auto
+            margin: 0
+            margin: 8rem 0 0 0
 
     .pets_slider_inner
         column-gap: 4rem
@@ -460,3 +462,164 @@ footer
 
     .footer_puppy
         margin: 6.4rem 0 0 0
+
+@media ( max-width: 767px )
+    h2
+        font-size: 2.5rem
+        line-height: 3.2rem
+        text-align: center
+        letter-spacing: 0.06em
+        color: $color-light-xl
+
+    h3
+        font-size: 2.5rem
+        line-height: 3.2rem
+        text-align: center
+        letter-spacing: 0.06em
+
+    h5
+        font-size: 1.5rem
+        line-height: 2.4rem
+        letter-spacing: normal
+
+    .container
+        padding: 0 1rem
+
+    .first_screen
+        .container
+            img
+                width: 26rem
+                height: auto
+                align-self: flex-end
+                margin-top: 10.5rem
+
+    .start_screen_text
+        width: 100%
+
+    .start_screen_text
+        align-items: center
+
+    .start_heading
+        width: 26rem
+
+    .start_subheading
+        width: 30rem
+        text-align: center
+
+    .header_menu
+        display: none
+
+    .burger_btn
+        display: flex
+
+    .about_screen
+        padding-top: 4.2rem
+        padding-bottom: 4.24rem
+        .container
+            img
+                width: 26rem
+                height: auto
+                margin-top: 3.9rem
+
+    .about_text
+        align-items: center
+        display: flex
+        flex-direction: column
+        padding: 0 1.5rem
+        text-align: justify
+
+    .about_title
+        text-align: center
+
+    .pets_screen
+        padding-top: 4rem
+        padding-bottom: 4.3rem
+
+    .slider_card:nth-child(2n)
+        display: none
+
+    .pets_slider
+        margin-top: 4.5rem
+        flex-wrap: wrap
+        justify-content: center
+
+    .pets_slider_inner
+        column-gap: 4rem
+        order: -1
+
+    .slide_arrow
+        margin: 2rem 4rem 0
+
+    .pets_button
+        margin-top: 4rem
+
+    .pets_help
+        padding-top: 4rem
+
+    .help_list
+        row-gap: 3rem
+        margin-top: 4.4rem
+        margin-bottom: 4.2rem
+        column-gap: 3rem
+        padding: 0 4.9px
+
+    .help_card
+        width: 13rem
+        img
+            height: 5rem
+            width: auto
+        .help_card_title
+            margin-top: 1.8rem
+            font-size: 1.5rem
+            line-height: 1.7rem
+
+    .donation_screen
+        padding-top: 4.2rem
+        padding-bottom: 4.2rem
+
+    .donation_text
+        text-align: center
+        display: flex
+        flex-direction: column
+        align-items: center
+
+    .donation_title
+        font-size: 2.5rem
+        line-height: 3.2rem
+
+    .donation_creditcard
+        width: 28.1rem
+
+    .creditcard_number
+        font-size: 1.5rem
+        line-height: 1.7rem
+
+    .donation_legal
+        text-align: justify
+        padding: 0 1rem
+
+    .donation_dog
+        width: 26rem
+        height: auto
+        margin-top: 4.2rem
+
+    .footer_col
+        align-items: center
+        height: 20.9rem
+
+    .footer_content
+        .container
+            padding: inherit
+            row-gap: 2.2rem
+
+    .footer_phone_mail
+        .footer_list_text
+            width: 100%
+
+    .footer_location
+        height: 22.2rem
+
+    .footer_puppy
+        width: 26rem
+        height: auto
+        margin-top: 1.8rem
