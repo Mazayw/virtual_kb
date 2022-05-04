@@ -1,39 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 10px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .keyboard {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 50%;
+  width: 91rem;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1px;
   padding: 1rem;
   background-color: #ccd1d6;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 0 auto;
+  border-radius: 1rem;
 }
 
-.keyboard_key {
+.keyboard__row {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1px;
+  width: 89rem;
+  grid-auto-flow: column;
+  justify-items: stretch;
+}
+
+.keyboard__key {
   background-color: #fff;
   border-radius: 5px;
-  height: 5rem;
-  width: 5rem;
+  min-height: 5rem;
   text-align: center;
   cursor: pointer;
+  margin: 0.2rem;
+  border: 0px solid;
+  -webkit-box-shadow: 1px 1px 1px #868689;
+          box-shadow: 1px 1px 1px #868689;
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+
+.keyboard__key:first-child, .keyboard__key:last-child {
+  background-color: #a3abb6;
+}
+
+.keyboard__key:hover {
+  background-color: #ccc8c8;
+}
+
+.keyboard__key:active {
+  background-color: #007aff;
+}
+
+.key_Space {
+  grid-column: span 5;
 }
 
 .hidden {
   display: none;
+}
+
+textarea {
+  display: block;
+  width: 91rem;
+  height: 170px;
+  margin: 20px auto;
+  border-radius: 1rem;
+  background-color: #f5f5f5;
+  color: #333;
+  font-size: 20px;
+  padding: 15px;
+  resize: none;
+}
+
+p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 2rem;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
