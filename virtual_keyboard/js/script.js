@@ -33,8 +33,6 @@ const Keyboard = {
     this.elements.textarea = document.createElement('textarea');
     this.elements.textarea.setAttribute('placeholder', 'Start typing...');
     this.elements.textarea.setAttribute('readonly', '');
-    //this.elements.textarea.setAttribute('wrap', 'off');
-    //this.elements.textarea.setAttribute('autocorrect', 'off');
     this.elements.text = document.createElement('p');
     this.elements.text.textContent =
       'Toggle language: Left Shift + Left Ctrl. Designed for Windows';
@@ -43,6 +41,25 @@ const Keyboard = {
     document.body.prepend(this.elements.textarea);
     this._createKeys();
     this.elements.keys = document.getElementsByClassName('keyboard__key');
+    window.addEventListener('keydown', (event) => {
+      console.log(event);
+      const keys = document.getElementsByClassName('keyboard__key');
+      if (event.code == 'ShiftLeft' && event.ctrlKey) {
+        this.properties.lang = this.properties.lang == 'en' ? 'ru' : 'en';
+      }
+      for (let key of keys) {
+        if (key.dataset.keycode == event.code) {
+          key.click();
+          key.classList.toggle('clicked');
+          setTimeout(() => key.classList.toggle('clicked'), 100);
+        }
+      } /*
+      const pressedElement = keys.find(
+        (el) => el.dataset.keycode == event.code
+      );*/
+      //console.log(pressedElement);
+      //event.code;
+    });
   },
 
   _getKeys() {
@@ -118,7 +135,6 @@ const Keyboard = {
                 this._triggerEvent();
               });
             }
-
             break;
         }
 

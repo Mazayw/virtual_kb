@@ -109,4 +109,8 @@ p {
 .key_CapsLock--active::after {
   background: #08ff00;
 }
+
+.clicked {
+  background-color: #007aff !important;
+}
 /*# sourceMappingURL=style.css.map */
