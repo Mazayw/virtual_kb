@@ -1,45 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap');
 
 *
     margin: 0
     padding: 0
     box-sizing: border-box
     font-size: 10px
-    font-family: 'Roboto', sans-serif
+    font-family: 'Roboto Mono', monospace
 
 .keyboard
-    width: 91rem
-    display: grid
-    grid-gap: 1px
+    width: 94rem
     padding: 1rem
     background-color: #ccd1d6
     justify-content: center
     align-items: center
-    margin: 0 auto
+    margin: 2px auto
     border-radius: 1rem
 
 .keyboard__row
-    display: grid
-    grid-gap: 1px
-    width: 89rem
-    grid-auto-flow: column
-    justify-items: stretch
+    display: flex
+    gap: 2px
 
 .keyboard__key
-    background-color: #fff
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: rgb(243, 243, 243)
     border-radius: 5px
     min-height: 5rem
-    text-align: center
+    width: 5rem
     cursor: pointer
     margin: 0.2rem
-    border: 0px solid
+    border: 1px solid #000
     box-shadow: 1px 1px 1px #868689
     font-size: 1.7rem
     font-weight: 400
     position: relative
     &:first-child, &:last-child
-        background-color: #a3abb6
+        flex-grow: 2
     &:hover
         background-color: #d6dbe2
     &:active
@@ -49,15 +46,19 @@
     border: 2px solid #a3abb6
     
 .key_Space
-     grid-column: span 5
-     background-color: #a3abb6
+     flex-grow: 17
+
+.key_Backquote
+    flex-grow: 0 !important
+.key_Enter
+    flex-grow: 3 !important
         
 .hidden
     display: none
 
 textarea
     display: block
-    width: 91rem
+    width: 94rem
     height: 170px
     margin: 20px auto
     border-radius: 1rem
@@ -85,7 +86,8 @@ p
     border-radius: 50%
 
 .key_CapsLock--active::after 
-     background: #08ff00
+     background: #007aff
 
 .clicked
     background-color: #007aff !important
+

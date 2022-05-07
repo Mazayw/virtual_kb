@@ -58,8 +58,8 @@ export default [
     'KeyM',
     'Comma',
     'Period',
-    'ArrowUp',
     'Slash',
+    'ArrowUp',
     'ShiftRight',
   ],
   [

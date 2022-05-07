@@ -1,18 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap");
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .keyboard {
-  width: 91rem;
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 1px;
+  width: 94rem;
   padding: 1rem;
   background-color: #ccd1d6;
   -webkit-box-pack: center;
@@ -21,27 +18,34 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 auto;
+  margin: 2px auto;
   border-radius: 1rem;
 }
 
 .keyboard__row {
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 1px;
-  width: 89rem;
-  grid-auto-flow: column;
-  justify-items: stretch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2px;
 }
 
 .keyboard__key {
-  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f3f3f3;
   border-radius: 5px;
   min-height: 5rem;
-  text-align: center;
+  width: 5rem;
   cursor: pointer;
   margin: 0.2rem;
-  border: 0px solid;
+  border: 1px solid #000;
   -webkit-box-shadow: 1px 1px 1px #868689;
           box-shadow: 1px 1px 1px #868689;
   font-size: 1.7rem;
@@ -50,7 +54,9 @@
 }
 
 .keyboard__key:first-child, .keyboard__key:last-child {
-  background-color: #a3abb6;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
 }
 
 .keyboard__key:hover {
@@ -66,8 +72,21 @@
 }
 
 .key_Space {
-  grid-column: span 5;
-  background-color: #a3abb6;
+  -webkit-box-flex: 17;
+      -ms-flex-positive: 17;
+          flex-grow: 17;
+}
+
+.key_Backquote {
+  -webkit-box-flex: 0 !important;
+      -ms-flex-positive: 0 !important;
+          flex-grow: 0 !important;
+}
+
+.key_Enter {
+  -webkit-box-flex: 3 !important;
+      -ms-flex-positive: 3 !important;
+          flex-grow: 3 !important;
 }
 
 .hidden {
@@ -76,7 +95,7 @@
 
 textarea {
   display: block;
-  width: 91rem;
+  width: 94rem;
   height: 170px;
   margin: 20px auto;
   border-radius: 1rem;
@@ -107,7 +126,7 @@ p {
 }
 
 .key_CapsLock--active::after {
-  background: #08ff00;
+  background: #007aff;
 }
 
 .clicked {
