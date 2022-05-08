@@ -1,3 +1,4 @@
+import './styles/index.sass';
 import lang from './layouts/index.js';
 import layout from './layouts/layout.js';
 
@@ -114,55 +115,7 @@ class Keyboard {
               this._updateTextArea();
             });
             break;
-          /*
-          case 'ArrowLeft':
-            keyElement.addEventListener('click', () => {
-              if (this.left) {
-                this.textarea.selectionStart = this.textarea.selectionStart - 1;
-                this.textarea.selectionEnd = this.textarea.selectionStart;
-                this._cursorPos();
-                this._updateTextArea();
-              }
-            });
-            break;
 
-          case 'ArrowRight':
-            keyElement.addEventListener('click', () => {
-              if (this.right.length > 0) {
-                this.textarea.selectionStart = this.textarea.selectionStart + 1;
-                this.textarea.selectionEnd = this.textarea.selectionStart;
-                this._cursorPos();
-                this._updateTextArea();
-              }
-            });
-            break;
-
-          case 'ArrowUp':
-            keyElement.addEventListener('click', () => {
-              if (this.textarea.selectionStart - 74 >= 0) {
-                this.textarea.selectionStart =
-                  this.textarea.selectionStart - 74;
-                this.textarea.selectionEnd = this.textarea.selectionStart;
-                this._cursorPos();
-                this._updateTextArea();
-                console.log(this.textarea.selectionStart);
-              }
-            });
-            break;
-
-          case 'ArrowDown':
-            keyElement.addEventListener('click', () => {
-              if (this.right.length > 74) {
-                this.textarea.selectionStart =
-                  this.textarea.selectionStart + 74;
-                this.textarea.selectionEnd = this.textarea.selectionStart;
-                this._cursorPos();
-                this._updateTextArea();
-                console.log(this.textarea.selectionStart);
-              }
-            });
-            break;
-*/
           default:
             if (keyElement.innerHTML.length < 2) {
               keyElement.addEventListener('click', () => {
