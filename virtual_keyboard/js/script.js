@@ -18,7 +18,6 @@ class Keyboard {
     this.keys;
   }
 
-  //Create Keyboard
   init() {
     if (localStorage.getItem('lang')) {
       this.lang = localStorage.getItem('lang');
@@ -29,7 +28,8 @@ class Keyboard {
     this.textarea.setAttribute('spellcheck', 'false');
     this.textarea.setAttribute('wrap', 'hard');
     this.text = document.createElement('p');
-    this.text.textContent = `Toggle language: Left Shift + Left Ctrl. Designed for Windows. Current language: ${this.lang}`;
+    this.text.textContent = `Toggle language: Left Shift + Left Ctrl. Designed for Windows. Current language: ${this.lang.toUpperCase()}`;
+
     document.body.prepend(this.text);
     document.body.prepend(this.main);
     document.body.prepend(this.textarea);
@@ -39,7 +39,6 @@ class Keyboard {
     document.addEventListener('keydown', (event) => this._onKeyDown(event));
     document.addEventListener('keyup', (event) => this._onKeyUp(event));
     this.textarea.addEventListener('click', () => this._cursorPos());
-    //console.log(this.textarea);
   }
 
   _createKeys() {
@@ -97,7 +96,7 @@ class Keyboard {
 
           case 'Tab':
             keyElement.addEventListener('click', () => {
-              this.left += '   ';
+              this.left += '\t';
               this._updateTextArea();
             });
             break;
@@ -109,12 +108,19 @@ class Keyboard {
             });
             break;
 
+          case 'Space':
+            keyElement.addEventListener('click', () => {
+              this.left += ' ';
+              this._updateTextArea();
+            });
+            break;
+          /*
           case 'ArrowLeft':
             keyElement.addEventListener('click', () => {
               if (this.left) {
-                this.right =
-                  this.left.charAt(this.left.length - 1) + this.right;
-                this.left = this.left.slice(0, -1);
+                this.textarea.selectionStart = this.textarea.selectionStart - 1;
+                this.textarea.selectionEnd = this.textarea.selectionStart;
+                this._cursorPos();
                 this._updateTextArea();
               }
             });
@@ -122,9 +128,10 @@ class Keyboard {
 
           case 'ArrowRight':
             keyElement.addEventListener('click', () => {
-              if (this.right) {
-                this.left = this.left + this.right.charAt(0);
-                this.right = this.right.slice(1);
+              if (this.right.length > 0) {
+                this.textarea.selectionStart = this.textarea.selectionStart + 1;
+                this.textarea.selectionEnd = this.textarea.selectionStart;
+                this._cursorPos();
                 this._updateTextArea();
               }
             });
@@ -132,14 +139,13 @@ class Keyboard {
 
           case 'ArrowUp':
             keyElement.addEventListener('click', () => {
-              if (this.left.length > 74) {
-                this.right =
-                  this.left.substr(
-                    this.left.length - 75,
-                    this.left.length - 1
-                  ) + this.right;
-                this.left = this.left.slice(0, -75);
+              if (this.textarea.selectionStart - 74 >= 0) {
+                this.textarea.selectionStart =
+                  this.textarea.selectionStart - 74;
+                this.textarea.selectionEnd = this.textarea.selectionStart;
+                this._cursorPos();
                 this._updateTextArea();
+                console.log(this.textarea.selectionStart);
               }
             });
             break;
@@ -147,20 +153,16 @@ class Keyboard {
           case 'ArrowDown':
             keyElement.addEventListener('click', () => {
               if (this.right.length > 74) {
-                this.left = this.left + this.right.slice(0, 75);
-                this.right = this.right.slice(75);
+                this.textarea.selectionStart =
+                  this.textarea.selectionStart + 74;
+                this.textarea.selectionEnd = this.textarea.selectionStart;
+                this._cursorPos();
                 this._updateTextArea();
+                console.log(this.textarea.selectionStart);
               }
             });
             break;
-
-          case 'Space':
-            keyElement.addEventListener('click', () => {
-              this.left += ' ';
-              this._updateTextArea();
-            });
-            break;
-
+*/
           default:
             if (keyElement.innerHTML.length < 2) {
               keyElement.addEventListener('click', () => {
@@ -186,38 +188,12 @@ class Keyboard {
 
   _updateTextArea() {
     this.value = this.left + this.right;
-    this.textarea.textContent = this.value;
+    this.textarea.value = this.value;
     this.textarea.selectionStart = this.left.length;
     this.textarea.selectionEnd = this.left.length;
     this.textarea.focus();
     this._cursorPos();
   }
-
-  _capsLock() {
-    if (this.capsLock) {
-      for (let key of this.keys) {
-        if (key.innerHTML.length == 1) {
-          key.innerHTML = key.innerHTML.toUpperCase();
-        }
-      }
-    } else {
-      for (let key of this.keys) {
-        if (key.innerHTML.length == 1) {
-          key.innerHTML = key.innerHTML.toLowerCase();
-        }
-      }
-    }
-  }
-  /* Delete
-  _switch() {
-    for (let key of this.keys) {
-      const keyData = lang[`${this.lang}`].find(
-        (el) => el.code == key.dataset.keycode
-      );
-      key.innerHTML = this.shift ? keyData.shift : keyData.small;
-    }
-  }
-  */
 
   _switchNum() {
     for (let key of this.keys) {
@@ -237,11 +213,11 @@ class Keyboard {
       if (keyData.shift.toLowerCase() == keyData.small)
         key.innerHTML = this.upperCase ? keyData.shift : keyData.small;
     }
-    this.text.textContent = `Toggle language: Left Shift + Left Ctrl. Designed for Windows. Current language: ${this.lang}`;
+    this.text.textContent = `Toggle language: Left Shift + Left Ctrl. Designed for Windows. Current language: ${this.lang.toUpperCase()}`;
   }
 
   _onKeyDown(event) {
-    event.preventDefault();
+    if (!event.code.match(/F\d\d?/g)) event.preventDefault();
     if (event.code == 'ShiftLeft' && event.ctrlKey) {
       this.lang = this.lang == 'en' ? 'ru' : 'en';
       localStorage.setItem('lang', this.lang);

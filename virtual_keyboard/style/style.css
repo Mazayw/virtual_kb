@@ -9,7 +9,7 @@
 }
 
 .keyboard {
-  width: 94rem;
+  width: 92rem;
   padding: 1rem;
   background-color: #ccd1d6;
   -webkit-box-pack: center;
@@ -95,7 +95,7 @@
 
 textarea {
   display: block;
-  width: 94rem;
+  width: 92rem;
   height: 170px;
   margin: 20px auto;
   border-radius: 1rem;
@@ -105,13 +105,18 @@ textarea {
   padding: 15px;
   resize: none;
   overflow: hidden;
+  word-wrap: break-word;
 }
 
-p {
+p, .checkbox, .checkbox > label {
   font-size: 1.5rem;
   font-weight: 400;
   margin-top: 2rem;
   text-align: center;
+}
+
+.checkbox > label {
+  margin-left: 5px;
 }
 
 .key_CapsLock::after {
