@@ -1,4 +1,3 @@
-
 Virtual keyboard task
 
 [Source code](https://github.com/Mazayw/virtual_kb)
