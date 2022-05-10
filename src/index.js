@@ -1,6 +1,6 @@
 import './styles/index.sass';
-import lang from './layouts/index.js';
-import layout from './layouts/layout.js';
+import lang from './layouts/index';
+import layout from './layouts/layout';
 
 class Keyboard {
   constructor() {
