@@ -1,12 +1,16 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 let mode = 'development';
+mode = 'production';
+/*
 if (process.env.NODE_ENV === 'production') {
   mode = 'production';
 }
+*/
 
 module.exports = {
-  mode: mode,
+  mode,
   output: {
     filename: '[name].[contenthash].js',
     assetModuleFilename: 'assets/[hash][ext][query]',
