@@ -2,6 +2,7 @@ const path = require('path');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { devtool } = require('./webpack.dev.config');
 
 const baseConfig = {
     entry: path.resolve(__dirname, './src/index.js'),
@@ -15,7 +16,7 @@ const baseConfig = {
         ],
     },
     resolve: {
-        extensions: ['.js'],
+        extensions: ['.js', '.ts'],
     },
     output: {
         filename: 'index.js',
@@ -33,6 +34,6 @@ const baseConfig = {
 module.exports = ({ mode }) => {
     const isProductionMode = mode === 'prod';
     const envConfig = isProductionMode ? require('./webpack.prod.config') : require('./webpack.dev.config');
-
+    devtool: 'inline-source-map';
     return merge(baseConfig, envConfig);
 };
