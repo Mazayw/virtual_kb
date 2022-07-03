@@ -6,6 +6,7 @@ const { devtool } = require('./webpack.dev.config');
 
 const baseConfig = {
     entry: path.resolve(__dirname, './src/index.js'),
+    devtool: 'inline-source-map',
     mode: 'development',
     module: {
         rules: [
@@ -34,6 +35,5 @@ const baseConfig = {
 module.exports = ({ mode }) => {
     const isProductionMode = mode === 'prod';
     const envConfig = isProductionMode ? require('./webpack.prod.config') : require('./webpack.dev.config');
-    devtool: 'inline-source-map';
     return merge(baseConfig, envConfig);
 };
