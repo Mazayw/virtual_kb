@@ -41,10 +41,10 @@ class Loader {
     }
 
     makeUrl(options: IOptions, endpoint: string): string {
-        const urlOptions = { ...this.options, ...options };
+        const urlOptions: { [key: string]: string } = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
-        Object.keys(urlOptions).forEach((key) => {
+        Object.keys(urlOptions).forEach((key: string): void => {
             url += `${key}=${urlOptions[key]}&`;
         });
 
