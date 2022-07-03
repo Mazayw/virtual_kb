@@ -3,16 +3,18 @@ import { AppView } from '../view/appView';
 interface INews {
     status: string;
     totalResults?: number;
-    articles?: {
-        source: { id: string; name: string };
-        author: string;
-        title: string;
-        description: string;
-        url: string;
-        urlToImage: string;
-        publishedAt: string;
-        content: string;
-    };
+    articles?: Array<IArticle>;
+}
+
+interface IArticle {
+    source: { id: string; name: string };
+    author: string;
+    title: string;
+    description: string;
+    url: string;
+    urlToImage: string;
+    publishedAt: string;
+    content: string;
 }
 
 class App {
