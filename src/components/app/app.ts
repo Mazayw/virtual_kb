@@ -32,7 +32,9 @@ class App {
             .addEventListener('click', (e: Event) =>
                 this.controller.getNews(e, (data: INews) => this.view.drawNews(data))
             );
-        this.controller.getSources((data: INews) => this.view.drawSources(data));
+        this.controller.getSources((data: INews) => {
+            this.view.drawSources(data);
+        });
     }
 }
 

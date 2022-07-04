@@ -22,7 +22,6 @@ class Loader {
 
     getResp(
         response: IResponseObj,
-        //{ endpoint: string, options: IOptions = {} },
         callback: Function = () => {
             console.error('No callback for GET response');
         }
@@ -55,7 +54,9 @@ class Loader {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())
-            .then((data) => callback(data))
+            .then((data) => {
+                callback(data);
+            })
             .catch((err) => console.error(err));
     }
 }
