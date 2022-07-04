@@ -1,5 +1,6 @@
 import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
+import search from '../app/search';
 interface INews {
     status: string;
     totalResults?: number;
@@ -32,9 +33,8 @@ class App {
             .addEventListener('click', (e: Event) =>
                 this.controller.getNews(e, (data: INews) => this.view.drawNews(data))
             );
-        this.controller.getSources((data: INews) => {
-            this.view.drawSources(data);
-        });
+        this.controller.getSources((data: INews) => this.view.drawSources(data));
+        document.getElementById('searchInput').addEventListener('input', search);
     }
 }
 
